@@ -80,10 +80,12 @@ initSocket(server);
 async function start() {
   try {
     if (process.env.NODE_ENV !== "test") {
-      await createAdminIfNotExists();
       await mongoose.connect(
         `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.winiz.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`
       );
+
+      await createAdminIfNotExists(mongoose);
+
       server.listen(PORT, () => {
         console.log(`Сервер запустився на порту: ${PORT}`);
       });
