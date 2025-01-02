@@ -1,0 +1,60 @@
+<div class="blog-list-container">
+  <ul>
+    <li class="blog-item">
+      <img class="blog-image" src="{{blog.img}}" alt="Image for {{blog.title}}" class="post-img" />
+      <h2 class="blog-title">{{blog.title}}</h2>
+      <p class="blog-description">{{blog.description}}</p>
+      <p>Автор: {{blog.user.username}}</p>
+      <p class="blog-date">Дата створення:
+        {{formatDate blog.createdAt}}</p>
+      <div class="comment-actions">
+        {{#if isShowPutButton}}
+        <form action="/blog/edit/{{blog._id}}" method="GET">
+          <button type="submit" class="action-button">Змінити</button>
+        </form>
+        {{/if}}
+        {{#if isShowDeleteButton}}
+        <form action="/blog/delete/{{blog._id}}?_method=DELETE" method="POST">
+          <button type="submit" class="delete-button">Видалити</button>
+        </form>
+        {{/if}}
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="comments-section">
+  <h3>Коментарі:</h3>
+  <ul class="comments-list">
+    {{#each comments}}
+    <li class="comment-item">
+      <p>{{this.text}}</p>
+      <small>Автор:
+        {{this.user.username}}
+        |
+        {{formatDate this.createdAt}}</small>
+
+      <div class="comment-actions">
+        {{#if isShowCommentPutButton}}
+        <form action="/blog/comment/{{blog._id}}/{{this._id}}" method="GET">
+          <button type="submit" class="action-button">Змінити</button>
+        </form>
+        <form action="/blog/comment/{{blog._id}}/{{this._id}}?_method=DELETE" method="POST">
+          <button type="submit" class="delete-button">Видалити</button>
+        </form>
+
+        {{/if}}
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+
+  <h3>Залиште коментар:</h3>
+  <form action="/blog/comment/{{blog._id}}" method="POST">
+    {{#if errorMessage.text}}
+    <p class="error-message">{{errorMessage.text}}</p>
+    {{/if}}
+    <textarea name="text" placeholder="Ваш коментар"></textarea>
+    <button type="submit">Надіслати</button>
+  </form>
+</div>

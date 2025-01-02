@@ -1,0 +1,28 @@
+<div class="form-container registration-container">
+  <h2>Реєстрація</h2>
+  <form action="/auth/register" method="POST" class="form registration-form">
+    <div class="form-group">
+      <label for="username">Логін:</label>
+      <input type="text" id="username" name="username" placeholder="Введіть логін" />
+      {{#if errorMessage.username}}
+      <p class="error-message">{{errorMessage.username}}</p>
+      {{/if}}
+    </div>
+    <div class="form-group">
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введіть пароль" />
+      {{#if errorMessage.password}}
+      <p class="error-message">{{errorMessage.password}}</p>
+      {{/if}}
+    </div>
+    {{#if errorMessage}}
+    <p class="error-message">{{errorMessage}}</p>
+    {{/if}}
+    <button type="submit" class="button button-primary">Зареєструватись</button>
+  </form>
+  <div class="link-container">
+    <p>Вже зареєстровані?
+      <a href="/auth/login" class="link">Увійти</a>
+    </p>
+  </div>
+</div>

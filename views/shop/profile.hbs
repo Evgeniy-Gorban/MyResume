@@ -1,0 +1,63 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="profile-photo-container">
+      {{#if img}}
+      <img src="{{img}}" alt="{{user.username}}" id="profile-photo" />
+      {{else}}
+      <img src="/{{img}}" alt="{{user.username}}" id="profile-photo" />
+      {{/if}}
+    </div>
+    <div class="profile-data-container">
+      <h2>Ласкаво просимо <span id="user-name">{{user.username}}</span></h2>
+    </div>
+  </div>
+
+  <div>
+    <form action="/shop/profile/upload/{{user.username}}" method="POST" enctype="multipart/form-data">
+      <label for="profilePhoto" class="file-upload-label">Змінити фото</label>
+      <input type="file" name="profilePhoto" id="profilePhoto" accept="image/*" onchange="this.form.submit()" />
+      <img id="preview" src="" alt="Перегляд зображення"
+        style="display: none; width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" />
+    </form>
+  </div>
+
+  <div class="cart-list-container">
+    <h3>Ваш кошик</h3>
+    {{#if profile.cart.products.length}}
+    {{#each profile.cart.products}}
+    <div class="cart-item">
+      <div class="cart-item-details">
+        <img src="{{this.productId.img}}" alt="{{this.productId.title}}" class="product-img" />
+        <div class="cart-item-info">
+          <p><strong>{{this.productId.title}}</strong></p>
+          <p>Ціна: {{this.productId.price}} грн.</p>
+        </div>
+      </div>
+      <div class="cart-item-actions">
+        <form action="/shop/product/update?_method=PUT" method="POST" class="update-cart-form">
+          <input type="hidden" name="productId" value="{{this.productId._id}}" />
+          <button type="submit" name="action" value="decrease" class="btn-decrease">-</button>
+          <input type="text" name="quantity" value="{{this.quantity}}" readonly class="quantity-display" />
+          <button type="submit" name="action" value="increase" class="btn-increase">+</button>
+        </form>
+        <form action="/shop/product/delete?_method=DELETE" method="POST">
+          <input type="hidden" name="productId" value="{{this.productId._id}}" />
+          <button type="submit" class="btn-secondary">Видалити</button>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+    <div class="cart-summary">
+      <p>Загальна кількість товарів:
+        <strong>{{totalQuantity}}</strong>
+      </p>
+      <p>Загальна сума: <strong>{{totalPrice}} грн.</strong></p>
+      <form action="/shop/placing-order" method="GET">
+        <button type="submit" class="btn-primary">Перейти до оформлення</button>
+      </form>
+    </div>
+    {{else}}
+    <p>Кошик порожній</p>
+    {{/if}}
+  </div>
+</div>

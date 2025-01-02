@@ -1,0 +1,12 @@
+<div class="form-container">
+  <h3>Відредагуйте коментар:</h3>
+  <form action="/blog/comment/{{blog._id}}/{{comments._id}}?_method=PUT" method="POST">
+    <div class="form-group">
+      {{#if errorMessage.text}}
+      <p class="error-message">{{errorMessage.text}}</p>
+      {{/if}}
+      <textarea name="text" id="text">{{comments.text}}</textarea>
+    </div>
+    <button class="button button-primary" type="submit">Змінити коментар</button>
+  </form>
+</div>

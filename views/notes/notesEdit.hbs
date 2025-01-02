@@ -1,0 +1,13 @@
+<h1>Редагування нотатки</h1>
+<form action="/notes/edit?_method=PUT" method="POST">
+    <input type="hidden" name="oldTitle" value="{{title}}">
+
+    <label for="title">Назва:</label>
+    <input type="text" id="title" name="title" value="{{title}}" required>
+
+    <label for="content">Зміст:</label>
+    <br>
+    <textarea id="content" name="content" required>{{content}}</textarea>
+
+    <button type="submit">Зберегти зміни</button>
+</form>

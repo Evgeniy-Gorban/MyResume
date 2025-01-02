@@ -1,0 +1,49 @@
+<div class="form-container">
+  <h1 class="page-title">Редагування продукту</h1>
+
+  <form action="/shop/admin/product/edit/{{product._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">Назва продукту:</label>
+      <input type="text" name="title" id="title" value="{{product.title}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Опис:</label>
+      <textarea name="description" id="description">{{product.description}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Ціна:</label>
+      <input type="number" name="price" id="price" value="{{product.price}}" />
+    </div>
+
+    <div>
+      <label for="productImg">Фото продукту:</label>
+      <input type="file" name="productImg" id="productImg" accept="image/*" />
+    </div>
+
+    <div class="form-group">
+      <label>Поточна категорія: </label>
+      <span>{{product.category.title}}</span>
+    </div>
+
+    <div class="form-group">
+      <label for="existingCategory">Змінити категорію (якщо потрібно)</label>
+      <select name="existingCategory" id="existingCategory">
+        <option value="">Виберіть категорію</option>
+        {{#each categories}}
+        <option value="{{this._id}}" {{#if (eq this._id product.category._id)}}selected{{/if}}>{{this.title}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="newCategory">Нова категорія (якщо хочете створити нову)</label>
+      <input type="text" name="newCategory" id="newCategory" placeholder="Введіть нову категорію" />
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Зберегти зміни</button>
+  </form>
+</div>

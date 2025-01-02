@@ -1,0 +1,55 @@
+<h2>Рекомендація: для роботи з адмін панеллю, залогініться під admin adminpassword</h2>
+<div class="store-container">
+  {{#if categories.length}}
+  <div class="categories">
+    <ul class="category-list">
+      {{#each categories}}
+      <li><a href="/shop?category={{this._id}}" class="category-link">
+          {{this.title}}
+        </a></li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="products">
+    {{#if products.length}}
+    {{#each products}}
+    <div class="product-item">
+      <img src="{{this.img}}" alt="{{this.title}}" class="product-img" />
+      <h3 class="product-title">{{this.title}}</h3>
+      <p class="product-price">{{this.price}}</p>
+      <p class="product-description">{{this.description}}</p>
+      <form action="/shop/product/add" method="POST">
+        <input type="hidden" name="productId" value="{{this._id}}" />
+        <button type="submit" class="btn-primary">Придбати</button>
+      </form>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>Товарів у цій категорії немає</p>
+    {{/if}}
+  </div>
+
+  {{else}}
+  <p>У магазині порожньо</p>
+  {{/if}}
+</div>
+<div class="pagination">
+  {{#if pages.length}}
+  <ul>
+    {{#if (gt currentPage 1)}}
+    <li><a href="/shop?category={{selectedCategory}}&page={{dec currentPage}}">« Попередня</a></li>
+    {{/if}}
+
+    {{#each pages}}
+    <li class="{{#if (eq this ../currentPage)}}active{{/if}}">
+      <a href="/shop?category={{../selectedCategory}}&page={{this}}">{{this}}</a>
+    </li>
+    {{/each}}
+
+    {{#if (lt currentPage totalPages)}}
+    <li><a href="/shop?category={{selectedCategory}}&page={{inc currentPage}}">Наступна »</a></li>
+    {{/if}}
+  </ul>
+  {{/if}}
+</div>

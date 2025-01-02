@@ -1,0 +1,89 @@
+<div class="container">
+  <h1 class="page-title">Адмін панель</h1>
+
+  <section class="section">
+    <h2 class="section-title">Користувачі</h2>
+    <form method="GET" action="/shop/admin/panel">
+      <label for="sortUsers">Сортувати:</label>
+      <select name="sortUser" id="sortUsers" onchange="this.form.submit()">
+        <option value="asc" {{#if (eq currentSort 'asc' )}}selected{{/if}}>Від А до Я</option>
+        <option value="desc" {{#if (eq currentSort 'desc' )}}selected{{/if}}>Від Я до А</option>
+      </select>
+    </form>
+    <ul class="list">
+      {{#each users}}
+      <li class="list-item">
+        <div class="list-item-content">
+          <span>{{this.username}}</span>
+          <form action="/shop/admin/user/delete/{{this._id}}?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger">Видалить</button>
+          </form>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Кошики користувачів</h2>
+    <form method="GET" action="/shop/admin/panel"> <label for="sortCartUser">Сортувати кошики:</label> <select
+        name="sortCartUser" id="sortCartUser" onchange="this.form.submit()">
+        <option value="asc" {{#if (eq currentSortCartUser 'asc' )}}selected{{/if}}>Від А до Я</option>
+        <option value="desc" {{#if (eq currentSortCartUser 'desc' )}}selected{{/if}}>Від Я до А</option>
+      </select> </form>
+
+    {{#each carts}}
+    <div class="cart-container">
+      <h3 class="cart-title">Кошик користувача: {{this.user.username}}</h3>
+      <ul class="cart-list">
+        {{#each products}}
+        <li class="cart-item">
+          {{this.productId.title}} - {{this.quantity}} шт.
+          <form action="/shop/admin/cart/product/delete/{{../user._id}}/{{this.productId._id}}?_method=DELETE"
+            method="POST" class="delete-form">
+            <button type="submit" class="btn btn-danger">Видалити</button>
+          </form>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/each}}
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Продукти у магазині</h2>
+
+    <form method="GET" action="/shop/admin/panel">
+      <label for="sortProduct">Сортувати за:</label>
+      <select name="sortProduct" id="sortProduct" onchange="this.form.submit()">
+        <option value="title" {{#if (eq currentSortProduct 'title' )}}selected{{/if}}>Назвою</option>
+        <option value="price" {{#if (eq currentSortProduct 'price' )}}selected{{/if}}>Ціною</option>
+        <option value="category" {{#if (eq currentSortProduct 'category' )}}selected{{/if}}>Категорією</option>
+      </select>
+
+      <label for="sortDirection">Напрям:</label>
+      <select name="sortDirection" id="sortDirection" onchange="this.form.submit()">
+        <option value="asc" {{#if (eq currentSortDirection 'asc' )}}selected{{/if}}>За зростанням</option>
+        <option value="desc" {{#if (eq currentSortDirection 'desc' )}}selected{{/if}}>За спаданням</option>
+      </select>
+    </form>
+
+    <ul class="list">
+      {{#each products}}
+      <li class="list-item">
+        Категорія: {{this.category.title}}<br />
+        Назва: {{this.title}}<br />
+        Ціна: {{this.price}} грн.
+        <div class="comment-actions">
+          <form action="/shop/admin/product/edit/{{this._id}}" method="GET">
+            <button type="submit" class="action-button">Змінити</button>
+          </form>
+          <form action="/shop/admin/product/delete/{{this._id}}?_method=DELETE" method="POST" class="delete-form">
+            <button type="submit" class="delete-button">Видалити</button>
+          </form>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+</div>

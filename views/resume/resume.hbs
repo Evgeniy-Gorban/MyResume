@@ -1,0 +1,526 @@
+<div class="resume-content">
+  <div class="resumeImage-container">
+    <img src="/uploads/resume/MyPhoto.jpg" alt="Моє фото для резюме" class="photo" />
+  </div>
+  <div class="resumeText-container">
+    <h2>Резюме</h2>
+    <div class="resume-section">
+      <h2>Особисті дані</h2>
+      <ul>
+        <li><strong>ПІБ:</strong> Горбань Євген Святославович</li>
+        <li><strong>Вік:</strong> 30 років</li>
+        <li><strong>Місце проживання:</strong> Україна, місто Кривий Ріг</li>
+      </ul>
+    </div>
+    <div class="resume-section">
+      <h2>Освіта</h2>
+      <p><strong>Магістр</strong> - Інженер-конструктор (Мехатронне обладнання гірничих виробництв)</p>
+      <p><strong>Спеціаліст</strong> - Гірничий інженер (Розробка родовищ та видобуток корисних копалин)</p>
+    </div>
+    <div class="resume-section">
+      <h2>Досвід роботи</h2>
+      <p><strong>Підприємство:</strong> ПРаТ "ШУ" Покровське, м. Покровськ</p>
+      <p><strong>Посада:</strong> гірничий майстер, помічник начальника</p>
+      <p><strong>Стаж:</strong> 6 років (2017-2023)</p>
+      <p><strong>Обов'язки:</strong> Керівництво, організація робіт, контроль за процесами та якістю на підприємстві</p>
+    </div>
+    <div class="resume-section">
+      <h2>Технічний стек</h2>
+      <ul>
+        <li><strong>Мови програмування:</strong> JavaScript, HTML, CSS, C#</li>
+        <li><strong>Технології:</strong> Unity 2D, Node.js, Mocha, Swagger, Docker, gitHub, dockerHub</li>
+      </ul>
+    </div>
+    <div class="resume-section">
+      <h2>Мета</h2>
+      <p>Прагну стати фулл-стек розробником, розвиваючи навички роботи з Node.js та React.</p>
+    </div>
+  </div>
+</div>
+<div class="action-list">
+  <div class="action-item">
+    <a href="/auth/login" class="action-button-link">
+      <button class="action-button">gitHub</button>
+    </a>
+    <div class="action-text-container">
+      <h4>Мій проєкт</h4>
+      <p>Я створив проєкт на Node.js з використанням шаблонізатора Handlebars (HBS) з мінімальним фронтендом та акцентом
+        на бекенд.
+        Реалізовані функціонал авторизації (логін та реєстрація), блогу, магазину, чату та нотаток. Тестування на
+        Mocha, документація на Swagger. Проєкт опублікований на
+        GitHub та Docker Hub.</p>
+      <div class="extra-hideRows">
+        <h5>Залежності</h5>
+        <p><strong>Основні залежності:</strong></p>
+        <p><strong>express</strong>: для створення серверної частини додатку.</p>
+        <p><strong>mongoose</strong>: для роботи з MongoDB.</p>
+        <p><strong>dotenv</strong>: для керування змінними середовища.</p>
+        <p><strong>jsonwebtoken</strong>: для реалізації авторизації за допомогою JWT.</p>
+        <p><strong>bcryptjs</strong>: для хешування паролів користувачів.</p>
+        <p><strong>cookie-parser</strong>: для парсингу та керування cookies у запитах.</p>
+        <p><strong>cors</strong>: для керування крос-доменними запитами.</p>
+        <p><strong>joi</strong>: для валідації даних на серверній стороні, включаючи запити та тіло даних.</p>
+        <p><strong>express-handlebars</strong>: для роботи з шаблонами Handlebars.</p>
+        <p><strong>socket.io</strong>: для реалізації чату в реальному часі.</p>
+        <p><strong>swagger-ui-express</strong> та <strong>swagger-jsdoc</strong>: для створення та відображення
+          документації
+          API.</p>
+        <p><strong>multer</strong>: для обробки завантаження файлів. Модуль використовується для прийому та збереження
+          файлів.</p>
+        <br>
+        <p><strong>Залежності для розробки:</strong></p>
+        <p><strong>nodemon</strong>: для автоматичного перезавантаження додатку при змінах у коді.</p>
+        <p><strong>mocha</strong> та <strong>chai</strong>: для виконання тестів та асинхронних операцій.</p>
+        <p><strong>supertest</strong>: для тестування HTTP-API.</p>
+        <p><strong>sinon</strong>: для створення моків та шпигунів у тестах.</p>
+        <p><strong>mongodb-memory-server</strong>: для використання MongoDB в пам'яті під час тестування, забезпечуючи
+          ізольовані тести.</p>
+
+        <h5>Тестування</h5>
+        <p>Проєкт використовує фреймворк Mocha для написання та виконання тестів. Для зручності використовуються
+          наступні
+          інструменти:</p>
+        <p><strong>Mocha, Supertest, Sinon, mongodb-memory-server, Chai</strong></p>
+        <p>Для тестування авторизації, блогу, магазину та інших функціональностей написано юніт-тести, які
+          запускаються через відповідні npm-скрипти:</p>
+        <p><code>npm run testauth</code> — тестування функціоналу авторизації.</p>
+        <p><code>npm run testblog</code> — тестування блогу.</p>
+        <p><code>npm run testshop</code> — тестування магазину.</p>
+        <p><code>npm run testshopadmin</code> — тестування адмін панелі магазину.</p>
+        <p><code>npm run testchat</code> — тестування чату.</p>
+        <p><code>npm run testnote</code> — тестування нотаток.</p>
+
+        <h5>Документація</h5>
+        <p>Для генерації документації API використовується Swagger. Документація доступна за адресою
+          <code><strong>http://localhost:3000/resume-docs</strong></code> і відображається через інтерфейс Swagger UI.
+          Документація
+          оновлюється з використанням
+          <strong>swagger-jsdoc</strong>, який автоматично генерує опис API на основі анотацій у коді.
+        </p>
+
+        <h5>Docker</h5>
+        <p>Проєкт контейнеризовано з використанням Docker. В проєкті є <strong>Dockerfile</strong> та
+          <strong>docker-compose.yml</strong> для запуску додатку та бази даних MongoDB в окремих контейнерах.
+        </p>
+        <p>
+          <strong>Docker image</strong> доступний у репозиторії docker hub.
+        </p>
+        <p><strong>Dockerfile</strong> для створення контейнера з Node.js, встановленням залежностей та запуском
+          додатку.
+        </p>
+        <p><strong>docker-compose.yml</strong> для налаштування багатоконтейнерного додатку, включаючи MongoDB та сервер
+          Node.js.</p>
+        <p>Для завантаження образу <strong>docker pull evgeniygorban/resume:MyResume</strong></p>
+        <p>Для створення контейнера <strong>docker-compose up -d</strong></p>
+        <p>Для відкриття сторінки резюме <strong>http://localhost:3000</strong></p>
+
+        <h5>Структура проекту</h5>
+        <pre>
+          │   .dockerignore
+          │   .env
+          │   .env.test
+          │   .gitignore
+          │   docker-compose.yml
+          │   Dockerfile
+          │   index.js
+          │   package-lock.json
+          │   package.json
+          │
+          ├───.vscode
+          │       settings.json
+          │
+          ├───controllers
+          │   │   resume.js
+          │   │
+          │   ├───Auth
+          │   │       auth.js
+          │   │
+          │   ├───Blog
+          │   │       blog.js
+          │   │       comment.js
+          │   │
+          │   ├───Chat
+          │   │       chat.js
+          │   │
+          │   ├───Notes
+          │   │       notes.js
+          │   │
+          │   └───Shop
+          │           admin.js
+          │           shop.js
+          │
+          ├───middleware
+          │       checkAuth.js
+          │       checkLoginAuth.js
+          │       uploadBlogImage.js
+          │       uploadNotesFiles.js
+          │       uploadProductImage.js
+          │       uploadProfileImage.js
+          │
+          ├───models
+          │   ├───Auth
+          │   │       User.js
+          │   │
+          │   ├───Blog
+          │   │       Blog.js
+          │   │       Comment.js
+          │   │
+          │   └───Shop
+          │           Cart.js
+          │           Category.js
+          │           Product.js
+          │           Profile.js
+          │
+          ├───public
+          │   ├───css
+          │   │       styles.css
+          │   │
+          │   ├───script
+          │   │       chat.js
+          │   │       script.js
+          │   │
+          │   └───uploads
+          │       │   dontImg.jpeg
+          │       │
+          │       ├───blogs
+          │       │       1735567402983-926774618.png
+          │       │       1735567997839-530075940.jpg
+          │       │       1735568019004-673932944.jpg
+          │       │
+          │       ├───notes
+          │       │       Нова нотатка.txt
+          │       │       Тест назва.txt
+          │       │
+          │       ├───products
+          │       │       1735568922059-508773406.jpg
+          │       │       1735568991302-872468584.jpg
+          │       │       1735569020921-526898725.jpg
+          │       │       1735569050404-97204358.jpg
+          │       │       1735569086661-15840602.jpg
+          │       │       1735569115946-285070578.jpg
+          │       │       1735569175518-175680324.jpg
+          │       │       1735569200460-22189067.jpg
+          │       │       1735569238690-420569213.jpg
+          │       │       1735569271124-506653301.jpg
+          │       │       1735569324918-268371902.jpg
+          │       │       1735569356011-158760897.jpg
+          │       │
+          │       ├───profiles
+          │       │       1735576472130-628940067.jpeg
+          │       │       1735576493304-861703459.jpeg
+          │       │       1735576507070-331792135.jpeg
+          │       │       1735576530374-171406703.jpeg
+          │       │       1735576661100-924137850.jpeg
+          │       │       1735576690552-625334295.jpg
+          │       │
+          │       └───resume
+          │               MyPhoto.jpeg
+          │
+          ├───routes
+          │       auth.js
+          │       blog.js
+          │       chat.js
+          │       notes.js
+          │       resume.js
+          │       shop.js
+          │
+          ├───test
+          │   │   test-image.jpg
+          │   │
+          │   ├───auth
+          │   │       auth.test.js
+          │   │
+          │   ├───blog
+          │   │       blog.test.js
+          │   │
+          │   ├───chat
+          │   │       chat.test.js
+          │   │
+          │   ├───note
+          │   │       note.test.js
+          │   │
+          │   └───shop
+          │           admin.test.js
+          │           shop.test.js
+          │
+          ├───utils
+          │   │   createAdmin.js
+          │   │   dontImg.js
+          │   │   socket.js
+          │   │
+          │   └───swagger
+          │           swagger.js
+          │           swaggerAuthDocs.js
+          │           swaggerBlogCommentsDocs.js
+          │           swaggerBlogDocs.js
+          │           swaggerChatDocs.js
+          │           swaggerNoteDocs.js
+          │           swaggerShopAdminDocs.js
+          │           swaggerShopDocs.js
+          │
+          ├───validation
+          │   ├───auth
+          │   │       loginValidation.js
+          │   │       registerValidation.js
+          │   │
+          │   └───blog
+          │           blogValidation.js
+          │           commentValidation.js
+          │
+          └───views
+              │   error.hbs
+              │
+              ├───auth
+              │       login.hbs
+              │       register.hbs
+              │
+              ├───blog
+              │   │   blog.hbs
+              │   │   blogId.hbs
+              │   │   blogUpdate.hbs
+              │   │   createBlog.hbs
+              │   │
+              │   └───comments
+              │           commentEdit.hbs
+              │
+              ├───chat
+              │       chat.hbs
+              │
+              ├───layouts
+              │       main.hbs
+              │
+              ├───notes
+              │       notes.hbs
+              │       notesEdit.hbs
+              │
+              ├───partials
+              │       footer.hbs
+              │       head.hbs
+              │       navbar.hbs
+              │
+              ├───resume
+              │       resume.hbs
+              │
+              └───shop
+                      adminPanel.hbs
+                      placingOrder.hbs
+                      productAdd.hbs
+                      productEdit.hbs
+                      profile.hbs
+                      shop.hbs
+        </pre>
+      </div>
+      <button class="show-more-button">Читати далі...</button>
+    </div>
+  </div>
+  <div class="action-item">
+    <a href="/auth/login" class="action-button-link">
+      <button class="action-button">Логін</button>
+    </a>
+    <div class="action-text-container">
+      <h4>Реалізовано функціональність логіну</h4>
+      <p><strong>Авторизація за логіном та паролем:</strong>
+        Введення логіну (username) та паролю (password).</p>
+
+      <div class="extra-hideRows">
+        <p><strong>JSON Web Tokens (JWT):</strong>
+          Для аутентифікації користувачів використовується механізм токенів JWT,
+          що забезпечує безпечне керування сесіями.</p>
+        <br>
+        <p><strong>Валідація даних (Joi):</strong>
+          Введені дані проходять перевірку на відповідність заданим
+          вимогам за допомогою вбудованих механізмів валідації. Це
+          запобігає некоректному вводу та можливим вразливостям.</p>
+        <br>
+        <p><strong>Використання Cookies для зберігання токенів:</strong>
+          Для зберігання JWT використовується HTTP-only cookies, що мінімізує ризик
+          крадіжки токенів через XSS-атаки.</p>
+      </div>
+      <button class="show-more-button">Читати далі...</button>
+    </div>
+  </div>
+  <div class="action-item">
+    <a href="/auth/register" class="action-button-link">
+      <button class="action-button">Реєстрація</button>
+    </a>
+    <div class="action-text-container">
+      <h4>Реалізовано функціональність для реєстрації користувача</h4>
+      <p><strong>Унікальність імені:</strong>
+        Реєстрація нового користувача з перевіркою на унікальність імені.</p>
+
+      <div class="extra-hideRows">
+        <p><strong>Хешування паролів (bcrypt):</strong>
+          Паролі користувачів захищені з використанням бібліотеки bcrypt, що
+          гарантує їх безпечне зберігання в базі даних.</p>
+        <br>
+        <p><strong>Збереження в базу даних (Mongoose):</strong>
+          Збереження імені та паролю нового користувача в базу даних MongoDB.</p>
+        <br>
+        <p><strong>Валідація даних (Joi):</strong>
+          Введені дані проходять попередню перевірку на відповідність
+          мінімальним вимогам, включаючи перевірку паролю та імені.</p>
+        <br>
+        <p><strong>Зберігання даних (Mongoose):</strong></p>
+        <p><strong>User:</strong> Модель для користувача.<br>
+      </div>
+      <button class="show-more-button">Читати далі...</button>
+    </div>
+  </div>
+  <div class="action-item">
+    <a href="/blog" class="action-button-link">
+      <button class="action-button">Блог</button>
+    </a>
+    <div class="action-text-container">
+      <h4>Проект реалізує функціональність для роботи з блогами (постами),
+        включаючи створення (зображення, титул, опис), редагування та
+        видалення постів, а також додавання, редагування та видалення
+        коментарів.</h4>
+      <p><strong>Реалізація CRUD:</strong>
+        Блоги можна створювати, редагувати, видаляти, а також переглядати їх
+        з коментарями, які також можна додавати, редагувати, видаляти.
+      </p>
+
+      <div class="extra-hideRows">
+        <br>
+        <p><strong>Зберігання даних (Mongoose):</strong></p>
+        <p><strong>Blog:</strong> Модель для постів.<br>
+          <strong>Comment:</strong> Модель для коментарів.<br>
+        </p>
+        <br>
+        <p><strong>Валідація даних (Joi):</strong>
+          Перевірка правильності даних при створенні та редагуванні блогів і
+          коментарів (наприклад, довжина заголовка та опису поста, довжина
+          коментарів).</p>
+        <br>
+        <p><strong>Авторизація користувачів:</strong>
+          Захищені маршрути для створення та редагування блогів і
+          коментарів з використанням cookie для перевірки авторизації.</p>
+        <br>
+        <p><strong>Шаблонізація з Handlebars:</strong>
+          Інтерфейс з динамічним виведенням даних</p>
+
+      </div>
+      <button class="show-more-button">Читати далі...</button>
+    </div>
+  </div>
+  <div class="action-item">
+    <a href="/shop" class="action-button-link">
+      <button class="action-button">Магазин</button>
+    </a>
+    <div class="action-text-container">
+      <h4>Проект реалізує основні функції інтернет-магазину, включаючи перегляд товарів, додавання їх у кошик,
+        управління профілем користувача та адміністрування товарів і користувачів.</h4>
+      <p><strong>Шаблонізація з Handlebars:</strong>
+        Інтерфейс з динамічним виведенням даних</p>
+
+      <div class="extra-hideRows">
+        <p><strong>Реалізація CRUD:</strong></p>
+        <p><strong>Товари:</strong> Можливість створення, редагування, видалення та перегляду товарів.
+          Товари мають назву, опис, ціну, зображення та категорію.
+          Фільтрація товарів за категоріями реалізована на сторінці магазину.</p>
+
+        <p><strong>Профіль:</strong> Користувачі можуть завантажувати зображення профілю (у разі відсутності
+          завантажується
+          зображення за замовчуванням).
+          Управління кошиком товарів.</p>
+
+        <p><strong>Кошик:</strong> Додавання товарів у кошик.
+          Оновлення кількості товарів (збільшення/зменшення).
+          Видалення товарів з кошика.</p>
+
+        <p><strong>Адміністрування:</strong> Адміністратор може додавати, редагувати (назву, ціну,
+          зображення, категорію) та видаляти товари. Доступ до адмін. панелі тільки у адміністратора.
+          Додавання категорій для продукту.
+          Видалення користувачів, їх кошиків або окремих товарів з кошика.
+          Сортування користувачів, кошиків та товарів в адмін-панелі.</p>
+        <br>
+        <p><strong>Зберігання даних (Mongoose):</strong></p>
+        <p><strong>Product:</strong> Модель для товарів.<br>
+          <strong>Category:</strong> Категорії товарів.<br>
+          <strong>Cart:</strong> Кошик користувача.<br>
+          <strong>Profile:</strong> Профіль користувача.
+        </p>
+        <br>
+        <p><strong>Фільтрація і пагінація:</strong>
+          Фільтрація товарів за категоріями на головній сторінці магазину.
+          Реалізована пагінація: на одній сторінці відображається 6 товарів.</p>
+        <br>
+        <p><strong>Авторизація користувачів:</strong>
+          Захищені маршрути (профіль з кошиком) доступні тільки авторизованим користувачам.
+          Маршрути для адміністрування (/admin/...) доступні тільки адміністраторам і надають додаткові
+          можливості управління користувачами, їх кошиками та товарами.</p>
+      </div>
+      <button class="show-more-button">Читати далі...</button>
+    </div>
+  </div>
+  <div class="action-item">
+    <a href="/chat" class="action-button-link">
+      <button class="action-button">Чат</button>
+    </a>
+    <div class="action-text-container">
+      <h4>Реалізована функціональність чату з використанням Socket.IO</h4>
+      <p><strong>Socket.IO:</strong>
+        Для реалізації реального часу в чаті використовується бібліотека <strong>Socket.IO</strong>, яка дозволяє
+        клієнтам і серверу обмінюватися даними в реальному часі, створюючи двосторонній зв'язок.
+      </p>
+
+      <div class="extra-hideRows">
+        <p><strong>Обробка повідомлень:</strong>
+          Коли користувач надсилає повідомлення, воно негайно відправляється на сервер через сокет-з'єднання. Сервер,
+          у свою чергу, розсилає це повідомлення всім підключеним користувачам у чаті.
+        </p>
+        <br>
+        <p><strong>Підключення користувачів:</strong>
+          Перш ніж користувач зможе увійти в чат, виконується перевірка його облікових даних за допомогою
+          <strong>JWT (JSON
+            Web Tokens)</strong>. За відсутності токена або неправильних даних користувача перенаправляють на сторінку
+          авторизації. Після успішної авторизації створюється з'єднання з сервером через <strong>Socket.IO</strong>, що
+          дозволяє
+          надсилати і отримувати повідомлення в реальному часі.
+        </p>
+        <br>
+        <p><strong>Протокол повідомлень:</strong>
+          Повідомлення передаються як об'єкти з полями <em>user</em> (ім'я користувача) та <em>message</em> (текст
+          повідомлення). Це дозволяє відрізняти повідомлення різних користувачів та відображати їх у чаті з відповідною
+          підписом.
+        </p>
+
+      </div>
+      <button class="show-more-button">Читати далі...</button>
+    </div>
+  </div>
+  <div class="action-item">
+    <a href="/notes" class="action-button-link">
+      <button class="action-button">Нотатки</button>
+    </a>
+    <div class="action-text-container">
+      <h4>Проєкт реалізує основні функції модуля файлової системи (Fs)</h4>
+      <p><strong>Шаблонізація з Handlebars:</strong> Інтерфейс з динамічним виведенням даних, відображення списку
+        нотаток
+        та можливість їх редагування.</p>
+
+      <div class="extra-hideRows">
+        <p><strong>Реалізація CRUD:</strong></p>
+        <p><strong>Нотатки:</strong> Можливість створення, редагування, видалення та скачування текстових нотаток
+          (.txt). Кожна нотатка має назву та вміст.</p>
+
+        <p><strong>Завантаження файлів:</strong> Користувачі можуть завантажувати текстові файли з нотатками на
+          сервер. При цьому підтримуються лише файли формату .txt.</p>
+
+        <p><strong>Редагування:</strong> Нотатки можна редагувати — змінити назву та вміст через
+          веб-інтерфейс.</p>
+
+        <p><strong>Видалення нотаток:</strong> Користувачі можуть видаляти нотатки.</p>
+        <p><strong>Завантаження на пристрій:</strong> Користувачі можуть скачувати нотатки на своє
+          пристрій.</p>
+
+        <br>
+        <p><strong>Зберігання даних:</strong>
+          Нотатки зберігаються у вигляді текстових файлів (.txt) у папці на сервері.</p>
+        <br>
+
+      </div>
+      <button class="show-more-button">Читати далі...</button>
+    </div>
+  </div>
+</div>

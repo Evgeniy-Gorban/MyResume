@@ -1,0 +1,32 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">Головна сторінка</a>
+  {{#if isShowAuthButtons}}
+  {{#if isLoggedIn}}
+  <div class="auth-buttons">
+    {{#if isShowCreatePostButtons}}
+    <a class="btn btn-success" href="/blog/create">Створити блог</a>
+    {{/if}}
+    {{#if (eq userRole "admin")}}
+    <a class="btn btn-success" href="/shop/admin/panel">Адмін панель</a>
+    {{#if isShowCreateProductButtons}}
+    <a class="btn btn-success" href="/shop/admin/product/add">Додати продукт</a>
+    {{/if}}
+    {{#if isShowProfileButtons}}
+    <a class="btn btn-secondary" href="/shop/profile/{{user.username}}">Профіль</a>
+    {{/if}}
+    {{else}}
+    {{#if isShowProfileButtons}}
+    <a class="btn btn-secondary" href="/shop/profile/{{user.username}}">Профіль</a>
+    {{/if}}
+    {{/if}}
+    <a class="btn btn-secondary" href="/auth/logout">Вийти</a>
+  </div>
+
+  {{else}}
+  <div class="auth-buttons">
+    <a class="btn btn-primary" href="/auth/register">Реєстрація</a>
+    <a class="btn btn-secondary" href="/auth/login">Логін</a>
+  </div>
+  {{/if}}
+  {{/if}}
+</nav>

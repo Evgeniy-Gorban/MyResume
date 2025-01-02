@@ -1,0 +1,19 @@
+<div class="blog-list-container">
+  <h1>Список блогів</h1>
+  <ul>
+    {{#each blogs}}
+    <li class="blog-item">
+      <a href="/blog/{{this._id}}">
+        {{#if this.img}}
+        <img class="blog-image" src="{{this.img}}" alt="{{this.title}}" />
+        {{/if}}
+        <h2 class="blog-title">{{this.title}}</h2>
+        <p class="blog-description">{{this.description}}</p>
+        <p>Автор: {{this.user.username}}</p>
+        <p class="blog-date">Дата створення:
+          {{formatDate this.createdAt}}</p>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</div>
