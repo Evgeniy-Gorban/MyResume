@@ -87,7 +87,7 @@ exports.loginPost = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      //secure: false,
+      secure: false,
       maxAge: 86400000,
     });
     res.status(200).redirect("/");
